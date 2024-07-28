@@ -59,7 +59,7 @@ Welcome to the Google Gemini Gen AI Projects repository! This repository contain
 
     ```
 
-   You can obtain the Google Gemini API key from (https://makersuite.com/).
+   You can obtain the Google Gemini API key from (https://aistudio.google.com/app/apikey).
 
 ### Running the Project
 
@@ -75,9 +75,4 @@ Welcome to the Google Gemini Gen AI Projects repository! This repository contain
     streamlit run app.py
     ```
 
-
-## Acknowledgments
-
-- [Google Gemini](https://cloud.google.com/gemini)
-- [Streamlit](https://streamlit.io/)
 
