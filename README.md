@@ -2,6 +2,16 @@
 
 Welcome to the Google Gemini Gen AI Projects repository! This repository contains a collection of projects utilizing the Google Gemini API for various AI-driven applications. Each project is designed to run independently with Streamlit for a user-friendly interface.
 
+## Projects
+
+1. **ATS Tracker**
+2. **Calorie Tracker with Image**
+3. **Multiple Documents ChatBot**
+4. **Invoice Multilingual**
+5. **QA Application**
+6. **Connecting with SQL**
+7. **YouTube Video Transcriptor**
+
 ## Getting Started
 
 ### Prerequisites
@@ -15,7 +25,7 @@ Welcome to the Google Gemini Gen AI Projects repository! This repository contain
 
     ```bash
     git clone https://github.com/JagadeeshRallabandi/Google_Gemini_Pro-Practice.git
-    cd google-gemini-gen-ai-projects
+    cd Google_Gemini_Pro-Practice
     ```
 
 2. **Create a virtual environment**
@@ -56,12 +66,11 @@ Welcome to the Google Gemini Gen AI Projects repository! This repository contain
 
     ```plaintext
     GOOGLE_GEMINI_API_KEY=your_google_gemini_api_key_here
-
     ```
 
    You can obtain the Google Gemini API key from (https://aistudio.google.com/app/apikey).
 
-### Running the Project
+### Running the Projects
 
 1. **Navigate to the project directory**
 
@@ -75,4 +84,30 @@ Welcome to the Google Gemini Gen AI Projects repository! This repository contain
     streamlit run app.py
     ```
 
+## Project Descriptions
 
+### ATS Tracker
+An AI-powered applicant tracking system to manage and track job applications.
+
+### Calorie Tracker with Image
+A calorie tracker that uses image recognition to estimate calorie intake from food images.
+
+### Multiple Documents ChatBot
+A chatbot that can interact with and retrieve information from multiple documents.
+
+### Invoice Multilingual
+An invoice processing tool that supports multiple languages.
+
+### QA Application
+A question and answer application powered by AI.
+
+### Connecting with SQL
+A project demonstrating how to connect and interact with SQL databases.
+
+### YouTube Video Transcriptor
+A tool that transcribes YouTube videos given a link.
+
+
+## Acknowledgments
+
+- [Google Gemini](https://cloud.google.com/gemini)
