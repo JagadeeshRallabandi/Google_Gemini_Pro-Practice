@@ -2,8 +2,9 @@ import streamlit as st
 import google.generativeai as genai
 import os
 import PyPDF2 as pdf
-
+import json
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # Configure the Generative AI API
@@ -28,8 +29,7 @@ with a deep understanding of tech field, software engineering, data science, dat
 and big data engineer. Your task is to evaluate the resume based on the given job description.
 You must consider the job market is very competitive and you should provide 
 the best assistance for improving the resume. Assign the percentage Matching based 
-on the JD and
-the missing keywords with high accuracy.
+on the JD and the missing keywords with high accuracy.
 resume: {resume_text}
 description: {jd}
 
@@ -49,7 +49,27 @@ if submit:
         resume_text = input_pdf_text(uploaded_file)
         input_prompt = input_prompt_template.format(resume_text=resume_text, jd=jd)
         response = get_gemini_response(input_prompt)
-        st.subheader("Response")
-        st.write(response)
+        
+        try:
+            # Parse the response JSON
+            response_json = json.loads(response)
+            st.subheader("Response")
+            
+            # Display the JD match percentage
+            st.markdown(f"**JD Match Percentage:** {response_json.get('JD Match', 'N/A')}")
+            
+            # Display the missing keywords
+            st.markdown("**Missing Keywords:**")
+            missing_keywords = response_json.get('MissingKeywords', [])
+            if missing_keywords:
+                st.markdown("- " + "\n- ".join(missing_keywords))
+            else:
+                st.markdown("None")
+            
+            # Display the profile summary
+            st.markdown("**Profile Summary:**")
+            st.markdown(response_json.get('Profile Summary', 'N/A'))
+        except json.JSONDecodeError:
+            st.error("Failed to parse the response. Please try again.")
     else:
         st.write("Please upload the resume")
